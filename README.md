@@ -6,7 +6,7 @@ En este repositorio se encontrarán los diferentes retos propuestos por la Unive
 
 De los retos resueltos, se hace especial mención al reto 5 del ciclo II donde se desarrolló una aplicación de escritorio, tal y como se indica a continuación.
 
-Desarrollo de una aplicación tipo escritorio empleando el lenguaje de programación Java y el Modelo Vista Controlador (MVC - _Model View Controller_).
+### Desarrollo de una aplicación tipo escritorio empleando el lenguaje de programación Java y el Modelo Vista Controlador (MVC - _Model View Controller_).
 
 Se ejecutaron los métodos **CRUD** (del inglés **_Create, Read, Update and Delete_**) sobre la tabla **Pelicula** (tomada del reto 4) de la base de datos FantasiPlus.
 Las consultas fueron ejecutadas en lenguaje SQL (del inglés **_Structured Query Language_**).
