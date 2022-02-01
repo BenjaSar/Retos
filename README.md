@@ -38,7 +38,7 @@ tp-Java
     └── doc                                	   # Documentación general del proyecto.
 ```
 
-## Authors
+## Authors of Reto 5
 
 FS - Nelson Salamanca
 
