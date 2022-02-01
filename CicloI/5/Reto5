@@ -1,0 +1,60 @@
+Después del éxito obtenido con los premios sorpresa, los administradores del salón de eventos tomaron la decisión de adquirir varios premios y tenerlos a disponibilidad para futuras ocasiones. Para ello, requieren de un programa que tenga las siguientes opciones:
+
+    Una funcionalidad denominada: premios(lista_premios) que retornará el listado de nombres únicos de premios acorde al listado dado como parámetro.
+
+Ejemplo:
+
+lista_premios = [‘USB’, ‘cuadros’, ’sombrillas’, ’cuadros’, ‘bolígrafos’, ’USB’, ’bonos’, ‘bonos’]
+
+La estructura de retorno deberá corresponder a: [‘USB’, ’cuadros’, ’sombrillas’, ’bolígrafos’, ‘bonos’]
+
+ 
+
+    Otra función nombrada como: conocerPosiciones(lista_pos, lista_prem, premio) que deberá generar el listado de las posiciones de los premios recibidos como parámetro y que a su vez coincidan con el nombre del  premio indicado en el último argumento.
+
+Ejemplo:
+
+Lista_pos = [8, 0, 2, 5, 1]
+
+Lista_prem = [‘USB’, ‘bonos, ’sombrillas’, ’cuadros’, ‘bolígrafos’, ’cuadros’, ’USB’, ’sombrillas’, ‘bonos’]
+
+premio = ’bonos’
+
+El retorno deberá coincidir con el listado de índices: [1, 8]  
+
+
+    La función denominada: obtenerPremiosIntercambio(lista_sedeA, lista_sedeB) que deberá retornar un listado con los premios candidatos a intercambio entre las dos sedes del salón de eventos. Por instrucciones de los administradores, se hace necesario priorizar los premios que el salón A requiere obtener del salón B.
+
+Ejemplo:
+
+lista_sedeA = [‘USB’, ‘cuadros’, ’sombrillas’, ’ropa’, ‘bolígrafos’, ’USB’, ’bonos’, ‘bonos’]
+
+lista_sedeB = [‘linternas’, ‘cuadros’, ‘libros’, ’USB’, ’bonos’, ‘llaveros’]
+
+La función deberá retornar la lista: [‘linternas’,’libros’,’llaveros’]
+
+
+    Una función adicional identificada como:  obtenerCantidadMaximaIntercambios(lista_sedeA, lista_sedeB) la cual deberá retornar el número que represente la cantidad máxima de premios que pueden intercambiar las sedes del salón de eventos, teniendo como prioridad los premios que no existen en común en ambos listados recibidos como argumentos.
+
+Ejemplo:
+
+lista_sedeA = [‘ropa’, ‘cuadros’, ’bonos’, ’llaveros’, ‘bolígrafos’, ’USB’, ’lapiceros’]
+
+lista_sedeB = [‘cuadros’, ‘libros’, ’USB’, ’bonos’, ‘relojes’]
+
+La función retornará el valor de 2, ya que en la sede A le puede interesar intercambiar máximo 2 elementos de la sede B que no posee, y a la sede B un total de 4 por la misma causa (no los posee y los tiene disponibles la otra sede), produciendo un máximo de 2 elementos para intercambio equitativo entre ellas.
+
+ 
+
+Entrada:
+
+La solución no requerirá entradas y salidas. Para ello será suficiente implementar las funciones definidas en el enunciado (con el mismo nombre, además de la cantidad, tipo y orden de parámetros), en el módulo (archivo de código fuente) nombrado como: bodegas.py
+
+ 
+
+La implementación de cada función (x4) más la importación exitosa del módulo(x1), permitirán obtener un total de 5 puntos para el reto.
+
+Comment :=>> no pasa el caso meFaltanDeLaClase con los siguientes argumentos [[0
+, 17, 24, 3, 11, 25, 27, 14, 7, 30], [2, 1, 1, 2, 2, 2, 1, 1, 2, 1, 2, 1, 2, 1, 
+2, 2, 2, 1, 2, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 1], 1]  
+

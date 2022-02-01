@@ -1,0 +1,22 @@
+La compañía de Nintendo tiene como propósito este año sorprender a sus clientes publicando un álbum con sus personas más icónicos los encargados han notado que cada vez que las personas que reúnen láminas para el álbum siempre crean una lista con los números de las láminas que les faltan y otra lista con los números de las que tienen para cambiar (repetidas). Con esas listas las personas realizan intercambios con otras. Adicionalmente, los encargados de jet han notado que las láminas que reúnen dependen del álbum con el que cuenten o estén llenando (álbumes viejos o nuevos), son clasificadas de manera diferente, a veces las llaman de tipo 1, 2, 3, 4, o 5. Es más, las láminas de un tipo (tipo de álbum) solo son cambiadas por las láminas del mismo tipo.
+
+Como ellos están tomando el curso del MinTic2021, han decidido crear un programa que ayude a las personas que realizan cambios de láminas de álbum. Para ello han notado que requieren crear una Clase llamada "Laminas" en Java que conste como mínimo de las siguientes funciones que les permitirán construir el programa completo:
+
+1. función "clases" dada una lista de los tipos de todas las láminas (en la posición i-ésima de la lista está el tipo de dicha lámina), genera una lista con los tipos de láminas sin repetición. La función debe retornar la lista. 
+
+2. función "meFaltanDeLaClase" dada una lista con los números de láminas que les faltan, la lista de las clases de cada lámina y una clase de láminas (en ese orden), les retorne una lista con los números de dicha clase que les faltan. Los números de láminas empiezan en cero (0) y van hasta el nueve (9). La función debe retornar la lista.
+
+3. función "noTengo" que dada una lista con las láminas que tiene otra persona y una lista con las láminas que tengo retorna la lista con las láminas que me interesan de la otra persona. Se debe retornar la lista.
+
+Para simplificar la primera versión decidieron pensar que todas las láminas son de un mismo tipo y que la lista que maneja cada persona indica los números de las láminas que tienen para cambiar y aquellos números que no están en dicha lista son los que necesitan. De esta manera deben crear una función "puedoCambiar" que reciba la lista de láminas que tiene otra persona y la lista de láminas que tienen ellos y que retorne el número de láminas que pueden cambiar. Para que sea evaluada correctamente, la función debe retornar un Integer.
+
+Entrada:
+
+Este programa no requiere entrada. Ni generará salida. Se requiere que el estudiante genere un archivo con el nombre Lamina.java sin main y que se respeten los nombres de las funciones dadas y sus parámetros.
+
+Comment :=>> no pasa el caso puedoCambiar con los siguientes argumentos [[49, 40
+, 26, 9, 14, 25, 18, 11, 39, 23, 19, 41, 38, 44, 42, 27, 28], [5, 13, 35, 48, 43
+, 0, 7, 30, 27, 2, 1, 40, 14, 28, 8, 10, 36, 49, 39, 23]] 
+
+Rta: 24, 39, 22, 8, 12, 4, 17, 0, 35, 15 
+

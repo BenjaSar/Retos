@@ -1,0 +1,203 @@
+En un evento social los porteros encargados del recinto, deben tener control ordenado por orden de llegada del tipo de generación (joven, adulto, mayor) de las personas que asisten. Para ello, acordaron registrar el tipo de generación al que corresponde cada asistente que ingresa al evento. Así mismo y para mejor control, decidieron que por cada nombre de generación registrado acumularán su respectiva cantidad si estos se encuentran en secuencia.
+
+Los organizadores del evento requieren un programador que les ayude a generar un reporte de la cantidad de nombres de las generaciones que coincidan de manera secuencial, según el registro realizado.
+
+ 
+
+Entrada
+
+El registro de los nombres de las generaciones obtenidas por los porteros del evento según el orden de llegada inscrito. Se espera cada valor esté separado por espacios sencillos.
+
+Salida.
+
+En el mismo orden registrado, y expresado de forma única en la secuencia, cada nombre de la generación separada por un espacio. En una siguiente línea y también separadas por un espacio, la cantidad acumulada de coincidencias para cada nombre de generación correspondientemente.  
+
+ 
+
+Ejemplo
+
+Entrada1
+joven mayor mayor mayor joven adulto joven joven	
+
+Salida1
+
+joven mayor joven adulto joven
+
+1 3 1 1 2
+
+Entrada2
+
+adulto adulto joven joven joven mayor joven mayor
+	
+salida2
+
+adulto joven mayor joven mayor
+
+2 3 1 1 1
+
+
+
+personas = "adulto adulto joven joven joven mayor joven mayor"
+etapa = []
+fPalabra = []
+def generacion(personas):
+  persona = personas.split()
+  for i in range(len(persona)):
+    if persona[i] not in etapa:
+          etapa.append(persona[i])
+    else:
+          if persona[i] != persona[i-1]:
+              etapa.append(persona[i])
+    final = " ".join(etapa)          
+  return final
+  #python3 Ejercicios/Retos/3/controlLegada.py 
+
+people = input("")
+print(generacion(people))
+  
+  
+##Funciona
+etapa = []
+fPalabra = []
+
+def generacion(personas):
+  persona = personas.split()
+  for i in range(len(persona)):
+    if persona[i] not in etapa:
+          etapa.append(persona[i])
+    else:
+          if persona[i] != persona[i-1]:
+              etapa.append(persona[i])
+  return etapa
+  #python3 Ejercicios/Retos/3/controlLegada.py 
+  
+  
+joven joven joven joven mayor mayor adulto joven joven joven joven joven joven joven mayor mayor mayor adulto joven joven joven joven mayor mayor
+
+
+--- Program output ---
+
+joven mayor adulto joven mayor adulto joven mayor
+
+
+--- Expected output (text)---
+
+joven mayor adulto joven mayor adulto joven mayor
+4 2 1 7 3 1 4 2
+
+
+
+#No funciona bien
+etapa = []
+fPalabras = []
+def generacion(personas):
+  fadulto = 0
+  fmayor = 0
+  fjoven = 0
+  persona = personas.split()
+  for i in range(len(persona)):
+    if persona[i] not in etapa:
+          etapa.append(persona[i])
+          if persona[i] != persona[i]:
+              if persona[i] == "adulto":
+                  fadulto = 1
+                  fPalabras.append(fadulto)
+              elif persona[i] == "joven":
+                  fjoven = 1
+                  fPalabras.append(fjoven)
+              else:
+                  fmayor = 1
+                  fPalabras.append(fmayor)
+          else:
+              if persona[i] == "adulto":
+                  fadulto = 1
+              elif persona[i] == "joven":
+                  fjoven = 1
+              else:
+                  fmayor = 1
+          
+    else:
+        if persona[i] != persona[i-1]:
+            etapa.append(persona[i])        
+            if persona[i] == "adulto":
+                fadulto = 1
+                fPalabras.append(fadulto)
+            elif persona[i] == "joven":
+                fjoven = 1  
+                fPalabras.append(fjoven)
+            else:
+                fmayor = 1
+                fPalabras.append(fmayor)
+        else:
+            if persona[i] == "adulto":
+                fadulto +=1
+                fPalabras.append(fadulto)
+            elif persona[i] == "joven":
+                fjoven+= 1
+                fPalabras.append(fjoven)
+            else:
+                 fmayor+=1
+                 fPalabras.append(fmayor)   
+               
+    final = " ".join(etapa)
+    ffPalabras = " ".join(str(element) for element in fPalabras)
+
+  return (final + "\n" + ffPalabras) 
+people = input("")
+print(generacion(people))
+#Ejercicios/Retos/3/controlLegada.py  
+Funciona bien
+
+from itertools import groupby
+etapa = []
+fPalabras = []
+def generacion(personas):
+  persona = personas.split()
+  fPalabras = [len(list(group)) for key, group in groupby(persona)]
+  for i in range(len(persona)):
+      if persona[i] not in etapa:
+              etapa.append(persona[i])
+      else:
+          if persona[i] != persona[i-1]:
+              etapa.append(persona[i])
+  final = " ".join(etapa)
+  ffPalabras = " ".join(str(element) for element in fPalabras)
+  
+  return (final + "\n" + ffPalabras) 
+people = input("")
+print(generacion(people))
+
+
+
+ista_asistentes =["joven", "joven", "joven", "mayor", "mayor", "adulto", "joven", "joven", "joven"]
+lista_asistentes_2 = lista_asistentes.copy()
+ 
+l1 = []
+l2 = []
+
+def contador(generacion):
+    acumulador_asistentes = 0
+
+    for gen in lista_asistentes_2:
+        if generacion == gen:
+            acumulador_asistentes +=1
+        else:
+            return acumulador_asistentes
+            # break
+    #return acumulador_asistentes
+    
+for palabra in lista_asistentes_1:
+    c = contador(palabra)
+    if c != 0:
+        l1.append(palabra)
+        l2.append(c)
+    for a in range(c):
+        lista_asistentes_2.pop(0)
+        
+
+print(contador(palabra))
+print(" ".join(l1))
+print( " ".join(str(element) for element in l2))
+
+
+

@@ -1,0 +1,68 @@
+Un peaje cercano a la capital suele estar muy concurrido de vehículos los fines de semana. El administrador del lugar dio las instrucciones al guarda de ruta, para que desvíe el tránsito hacia alguna de sus casetas de cobro, según la última letra de numero de la placa que tenga un determinado vehículo.
+
+Por política de registros en el peaje, cada caseta tiene asignado una serie de letras de placas que, de coincidir alguna de ellas con la última letra de la placa del vehículo enrutado, se deberá registrar un comando para contabilizar el total de coincidencias y entregar el reporte a fin de mes.
+
+En el orden de llegada para cada vehículo, si la última letra de su placa coincide con las series asignadas a cada caseta, entonces se evalúa e incrementa la ventaja a cada caseta según corresponda. Para cada registro, si es la caseta 1 la que toma ventaja, entonces se debe imprimir el comando “1”.  Si por el contrario, es la caseta 2 la que aventaja, se deberá imprimir el comando “2”; en caso que al evaluar las casetas no presenten ventajas entre sí, se debe registrar el comando “0”. Se registra el comando actual si la letra de la placa está asignada en ambas casetas.
+
+Finalmente, todos los vehículos que pasen por el peaje independiente si son o no asignadas a las series de letras de las casetas, deben registrar su última letra de la placa en el sistema.
+
+El administrador requiere un programa que le permita conocer el informe de todos los comandos registrados en el sistema acorde al orden que correspondió.
+
+ 
+
+Entrada
+
+Inicialmente se debe capturar las letras asignadas la caseta 1, en la línea posterior las correspondientes a la caseta 2. La última captura debe contener el listado secuencial de las letras de las placas de los vehículos que registraron su paso por el peaje.
+
+Salida
+
+Una cadena de texto con todos los comandos impresos en el proceso.  
+
+
+Entrada
+UCZJ
+
+RQFV
+
+PLZSOIIXFVQWZOVHLOMCFZUFWNWS
+	
+	
+
+Salida
+
+0011111102222222222222022222
+
+Entrada
+
+AKOF
+
+VGSA
+
+GPAEJYKWQFJCOBDYOWLHCQ
+	
+Salida
+
+2222220001111111111111
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ymurciag@unal.edu.co --> Coaching
+

@@ -1,0 +1,73 @@
+Reto 4: Grupo P57
+Número máximo de ficheros: 1
+Tipo de trabajo: Individual
+
+Dado el éxito demostrado durante el evento social, los organizadores deciden sorprender a los asistentes con algunos premios sorpresa los cuales serán rifados al finalizar el evento. Por esto, hacen un listado con los nombres de los posibles premios y se dirigen a adquirirlos en la tienda más cercana.
+
+En el almacén al que ingresan a realizar la compra, los productos están etiquetados con su nombre y valor, y ellos quieren saber si pueden adquirir allí todos los productos que acordaron.    
+
+Se requiere un programador que implemente un algoritmo que les permita a los administradores conocer los productos que quieren adquirir y que están disponibles en la tienda, así mismo, su correspondiente precio total proyectado. 
+
+Entrada
+
+En una línea y en formato JSON, todos los nombres de productos (y sus correspondientes precios) que están disponibles para la venta en el almacén. En la siguiente línea y separados por un espacio, el listado con los nombres de los productos (premios) que se requieren comprar. 
+
+Salida.
+
+En una línea independiente, el costo total proyectado para la compra de los productos existentes en la tienda con respecto a los que se requieren adquirir. En la siguiente línea y separados por espacios, los nombres de los correspondientes productos incluidos en la proyección de costo. 
+
+Ejemplo
+
+Entrada
+
+{"ropa": 91988, "cuadros": 50105, "sombrilla": 79003, "USB": 82479, "bonos": 12217}
+
+cuadros carteras ropa bonos
+
+
+
+
+Salida
+
+154310
+
+cuadros ropa bonos
+
+Entrada2
+
+{"bonos": 31540, "agenda": 96121, "calzado": 61743, "USB": 30336, "ropa": 14535}
+
+ropa sombrilla calzado USB
+	
+Salida2
+
+106614
+
+ropa calzado USB
+
+#Funcionando
+
+#Author: FS
+#Mision TIC-2021
+
+import json
+
+def compraProductos(vProductos, cPremios):
+    sumaTotal = []
+    salida = []
+    sumaTotal = 0
+    cPremio = cPremios.split() 
+    jsonObject = json.loads(vProductos)
+    
+    for i in cPremio:
+        for key in jsonObject:
+            value = jsonObject[key]
+            if key in i:
+                salida.append(i)
+                sumaTotal += value
+        salidaFinal = " ".join(str(element) for element in salida)
+    return (str(sumaTotal) + "\n" +  salidaFinal)
+    
+productosVentas = input("")
+bPrizes = input("")
+print(compraProductos(productosVentas, bPrizes))
